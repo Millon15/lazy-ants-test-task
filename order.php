@@ -10,4 +10,5 @@ use Symfony\Component\Console\Application;
 
 $app = new Application('Backery app', '1.0.0');
 $app->add(new BaseCommand(BaseProduct::NAME_PANCAKE));
+$app->add(new BaseCommand(BaseProduct::NAME_AMERICANO));
 $app->run();

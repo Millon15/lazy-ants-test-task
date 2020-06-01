@@ -15,3 +15,18 @@ Pancake completed
 если по какой-то причине блюдо не приготовилось, необходимо вывести на экран почему: 
 
 {productName} was not completed because of {failReason}
+
+----------------------------------------------------------------
+
+INSTALL
+----------------------------------------------------------------
+`composer install`
+
+
+HOW TO USE
+----------------------------------------------------------------
+`php order.php pancake`
+OR
+`php order.php americano`
+OR
+`php order.php americano sugar`

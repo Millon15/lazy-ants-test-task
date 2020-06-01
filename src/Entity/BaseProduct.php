@@ -6,6 +6,7 @@ namespace src\Entity;
 abstract class BaseProduct
 {
     public const NAME_PANCAKE = 'pancake';
+    public const NAME_AMERICANO = 'americano';
 
     /**
      * @var array
