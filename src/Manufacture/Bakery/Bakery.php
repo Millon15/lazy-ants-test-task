@@ -3,7 +3,8 @@ declare(strict_types=1);
 
 namespace src\Manufacture\Bakery;
 
-use src\Entity\BaseRequest;
+use src\Value\BaseRequest;
+use src\Entity\BaseProduct;
 use src\Exception\ManufactureException;
 use src\Manufacture\ManufactureInterface;
 
@@ -17,10 +18,17 @@ class Bakery implements ManufactureInterface
     public function produce(BaseRequest $request): void
     {
         try {
-            $productName = "\\src\\Entity\\Product\\{$request->getProductName()}";
-            $product = new $productName();
+            $productName = ucfirst($request->getProductName());
+            $productName = "\\src\\Entity\\Product\\$productName";
+            $product = new $productName($request);
+        } catch (ManufactureException $e) {
+            throw $e;
         } catch (\Throwable $e) {
             throw new ManufactureException('bad product name provided', $e->getCode(), $e);
+        }
+
+        if (! $product instanceof BaseProduct) {
+            throw new ManufactureException('there is no product with such name founded.', 2);
         }
 
         // try {
@@ -35,11 +43,11 @@ class Bakery implements ManufactureInterface
                 \array_map(fn($cls) => new $cls(), $product->getReceiptIngredients())
             );
         } catch (\Throwable $e) {
-            throw new ManufactureException('bad product receipt, cannot mix-up some ingredients for the product', $e->getCode(), $e);
+            throw new ManufactureException('bad product receipt, cannot mix-up some ingredients for the product.', $e->getCode(), $e);
         }
 
         if (! $product->isCompleted()) {
-            throw new ManufactureException('bad product receipt', 123);
+            throw new ManufactureException('bad product receipt.', 3);
         }
     }
 }

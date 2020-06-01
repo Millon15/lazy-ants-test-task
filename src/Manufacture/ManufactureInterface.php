@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace src\Manufacture;
 
-use src\Entity\BaseRequest;
+use src\Value\BaseRequest;
 
 interface ManufactureInterface
 {
