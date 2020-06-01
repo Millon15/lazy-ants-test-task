@@ -1,0 +1,32 @@
+{
+    "name": "LazyAnts Backery",
+    "description": "Backery for LazyAnts",
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "license": "MIT",
+    "type": "project",
+    "homepage": "https://lazy-ants.com/",
+    "keywords": [
+        "Backery",
+        "LazyAnts"
+    ],
+    "authors": [
+        {
+            "name": "fatfattony"
+        },
+        {
+            "name": "millon15"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "src\\": "src/"
+        }
+    },
+    "require": {
+        "symfony/console": "^5.1"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-master"
+    }
+}

@@ -1,13 +1,14 @@
 <?php
+declare(strict_types=1);
 
 namespace src\Entity\Ingredient;
 
 use src\Entity\BaseIngredient;
 
-class Flour extends BaseIngredient
+class Egg extends BaseIngredient
 {
     public function getName(): string
     {
-        return self::NAME_FLOUR;
+        return self::NAME_EGG;
     }
 }

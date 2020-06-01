@@ -1,16 +1,14 @@
 <?php
+declare(strict_types=1);
 
 namespace src\Entity\Ingredient;
 
 use src\Entity\BaseIngredient;
 
-class Sugar extends BaseIngredient
+class Water extends BaseIngredient
 {
-    /**
-     * @return string
-     */
     public function getName(): string
     {
-        return self::NAME_SUGAR;
+        return self::NAME_WATER;
     }
 }
